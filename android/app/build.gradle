@@ -1,0 +1,36 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.slayan"
+    compileSdk = 34 
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    defaultConfig {
+        applicationId = "com.example.slayan"
+        minSdkVersion 21 // Ganti dengan versi min SDK yang sesuai
+        targetSdkVersion 33 // Ganti dengan versi target SDK yang sesuai
+        versionCode 1 // Tentukan versi kode aplikasi Anda
+        versionName "1.0.0" // Tentukan nama versi aplikasi Anda
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
